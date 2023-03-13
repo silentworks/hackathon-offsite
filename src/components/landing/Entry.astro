@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  ai: CollectionEntry<'ai'>;
+}
+
+const { ai } = Astro.props;
+
+const { Content } = await ai.render();
+---
+<style>
+    article :global(p > code) {
+        background-color: #EDECEB;
+        color: #EB5757;
+        padding: 4px 6px;
+    }
+    article :global(.astro-code) {
+        padding: 2em 1em;
+    }
+    article :global(p > a) {
+        display: inline-block;
+        border-bottom: 1px solid #EB5757;
+    }
+    article :global(p > a:hover) {
+        color: #eb5757;
+        border-bottom: none;
+    }
+</style>
+
+<article
+    aria-labelledby={`episode-${ai.data.step}-title`}
+    class="px-8 lg:px-24 py-12 items-center group"
+>
+    <div class="flex items-center sm:items-start">
+    <div class="ml-6 flex-1 text-sm">
+        <div class="font-medium text-gray-900 sm:flex">
+        <div>
+            <h2
+            class="mt-2 text-lg lg:text-2xl font-semibold text-white font-display tracking-widest"
+            >
+            <span class="font-mono">{ai.data.step}</span>: {ai.data.title}
+            </h2>
+        </div>
+        </div>
+        <div class="mt-1 text-white/60 font-light lg:text-lg space-y-6 entry-content">
+            <Content />
+        </div>
+    </div>
+    </div>
+</article>

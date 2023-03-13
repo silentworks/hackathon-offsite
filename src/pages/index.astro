@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/landing/Hero.astro";
+import Entries from "../components/landing/Entries.astro";
+import Footer from "../components/global/Footer.astro";
+import { AstroSeo } from "@astrolib/seo";
+
+import { getCollection } from 'astro:content';
+import Entry from "../components/landing/Entry.astro";
+
+const aiSteps = await getCollection('ai');
+---
+
+<!---
+Use AstroSeo in all the pages you want different Seo than the index page
+-->
+<AstroSeo
+  title="Supabase for AI"
+  description=""
+  canonical="https://supabaseforai.peelingpixels.com"
+  openGraph={{
+    url: "https://supabaseforai.peelingpixels.com",
+    title: "Supabase for AI",
+    description: "",
+    images: [
+      {
+        url: "https://supabaseforai.peelingpixels.com/opengraph/social-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Social open graph",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://supabaseforai.peelingpixels.com/opengraph/twitter-og.jpg",
+        width: 4096,
+        height: 4096,
+        alt: "Twitter open graph",
+        type: "image/jpeg",
+      },
+      { url: "https://supabaseforai.peelingpixels.com/opengraph/social-og.jpg" },
+      { url: "https://supabaseforai.peelingpixels.com/opengraph/twitter-og.jpg" },
+    ],
+    site_name: "SupabaseForAI",
+  }}
+  twitter={{
+    handle: "@egor_from_supa",
+    site: "@site",
+    cardType: "summary_large_image",
+  }}
+/>
+<BaseLayout>
+  <Hero />
+  <Entries />
+  <section class="border-b border-white">
+    <div class="mx-auto max-w-7xl border-x border-white">
+      <div class="mx-auto divide-y divide-white">
+        { aiSteps.map(step => (
+          <Entry ai={step} />
+        ))}
+      </div>
+    </div>
+  </section>
+  <Footer />
+</BaseLayout>
