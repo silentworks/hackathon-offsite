@@ -9,7 +9,8 @@ const { ai } = Astro.props;
 const { Content } = await ai.render();
 ---
 <style>
-    article :global(p > code) {
+    article :global(p > code),
+    article :global(li > code) {
         background-color: #EDECEB;
         color: #EB5757;
         padding: 4px 6px;
@@ -17,13 +18,28 @@ const { Content } = await ai.render();
     article :global(.astro-code) {
         padding: 2em 1em;
     }
-    article :global(p > a) {
+    article :global(p > a),
+    article :global(li > a) {
         display: inline-block;
         border-bottom: 1px solid #EB5757;
     }
-    article :global(p > a:hover) {
+    article :global(p > a:hover),
+    article :global(li > a:hover) {
         color: #eb5757;
         border-color: rgb(255 255 255 / 0.6);
+    }
+    article :global(ul) {
+        list-style-type: disc;
+    }
+    article :global(ol) {
+        list-style-type: decimal;
+    }
+    article :global(li) {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    article :global(strong) {
+        font-weight: 800;
     }
 </style>
 
