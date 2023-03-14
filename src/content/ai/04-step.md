@@ -5,7 +5,7 @@ title: Create embeddings
 
 To search through your texts base (like documentation or a book that you really like) you should create embeddings for it. Wonderful **[Greg Richardson](https://twitter.com/ggrdson)** already made a script to do that. The only thing left to do is to collect your documents as a bunch of Markdown files and pass them to it.
 
-You can find the full code here: [https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/apps/docs/scripts/generate-embeddings.ts](https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/apps/docs/scripts/generate-embeddings.ts)
+You can find the full code here: [Embeddings Generation Code](https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/apps/docs/scripts/generate-embeddings.ts)
 
 What it does is:
 

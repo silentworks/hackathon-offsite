@@ -9,7 +9,7 @@ We can use the same OpenAI API `openai.createEmbedding` to vectorise users’s q
 
 To do so you can use the following Postgres Function also provided by **[Greg Richardson](https://twitter.com/ggrdson)**:
 
-[https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/supabase/migrations/20230128004504_embedding_similarity_search.sql](https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/supabase/migrations/20230128004504_embedding_similarity_search.sql)
+[Embedding Similarity Search SQL](https://github.com/supabase/supabase/blob/6acc7332c6909030c1a2c69c561c27c39ff1f1ff/supabase/migrations/20230128004504_embedding_similarity_search.sql)
 
 After you get Top-10 results, for example, you need to extract the real text blocks for these and put it into GPT-3.5 (a.k.a. ChatGPT) with the initial User’s query and the following Prompt to get the comprehensive answer form your personal AI assistant:
 
