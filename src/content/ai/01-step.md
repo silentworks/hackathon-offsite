@@ -3,7 +3,7 @@ step: "01"
 title: Create Supabase project
 ---
 
-To create a project with Supabase, navigate to [Supabase](https://app.supabase.com/), click `Sign In` and authenticate with GitHub to login or register a new account.
+To create a project with Supabase, navigate to [Supabase](https://supabase.com/?ref=supabaseforai), click `Sign In` and authenticate with GitHub to login or register a new account.
 
 From the Supabase dashboard, click `New project` and select an organization.
 
